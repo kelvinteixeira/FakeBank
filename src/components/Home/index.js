@@ -1,24 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import {React, useState} from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import './style.css'
 
 
 export default function Home() {
-  return (
-    <form>
+  const [cpf, setCpf] = useState('')
+  const [senha, setSenha] = useState('')
+  const history = useHistory()
 
-      <label>Usuário
-        <input type="text"></input>
+  function logar(e) {
+    e.preventDefault()
+    // mock pra logar
+    if (cpf === '01787716430' && senha === '123') {
+      history.push('/dashboard')
+    } else {
+      alert('USUARIO OU SENHA INVALIDOS')
+    }
+  }
+
+  return (
+
+    <form>
+  
+      <h1>Faça seu login</h1>
+
+      <label>CPF
+        <input value= { cpf } type="text" onChange={ (e) => setCpf(e.target.value)}></input>
       </label>
 
       <label>Senha
-        <input type="password"></input>
+        <input value={senha} type="password" onChange={ (e) => setSenha(e.target.value)}></input>
       </label>
 
-      <button>Entrar</button>
+      <button onClick={logar}>Entrar</button>
       
       <Link className="linkDash" to="/singup">
-        <h5>Ou então crie sua conta</h5>
+        <h5>Ainda não sou cliente</h5>
       </Link>
     </form>
   )
