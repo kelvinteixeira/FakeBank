@@ -21,8 +21,10 @@ export default function Home() {
   return (
 
     <form>
-  
-      <h1>Faça seu login</h1>
+
+      <div className="fazerLogin">
+        <h3>Faça seu login</h3>
+      </div>
 
       <label>CPF
         <input value= { cpf } type="text" onChange={ (e) => setCpf(e.target.value)}></input>
@@ -34,9 +36,8 @@ export default function Home() {
 
       <button onClick={logar}>Entrar</button>
       
-      <Link className="linkDash" to="/singup">
-        <h5>Ainda não sou cliente</h5>
-      </Link>
+      <Link className="links" to="/recovey">Esqueci minha senha &gt; </Link>
+      <Link className="links" to="/singup">Ainda não sou cliente &gt; </Link>
     </form>
   )
 }

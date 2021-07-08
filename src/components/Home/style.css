@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+.fazerLogin {
+    margin-bottom: 30px;
+    color: #2818bd8a;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -7,7 +12,7 @@ form {
     justify-content: center;
     width: 300px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: solid 1px #000;
     margin-top: 150px;
     margin-left: 80px;
@@ -20,9 +25,9 @@ label {
     flex-direction: column;
     align-items: left;
     margin-bottom: 8px;
-    color: #000;
     max-width: 250px;
     width: 100%;
+    color: #2818bd8a;
 }
 
 
@@ -31,40 +36,42 @@ input {
     outline: none;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #2818bd8a;
 }
 
 
 button {
-    color: #fff;
-    background: #000;
+    color: #2818bd8a;
+    background: #fff;
     margin-top: 25px;
     margin-bottom: 25px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
-    border: 0;
+    border: 1px solid #2818bd8a;
     height: 60px;
-    width: 160px;
+    width: 200px;
     cursor: pointer;
     transition: ease-in-out 0.5s;
 }
 
 button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #2818bd8a;
+    color: #fff;
     border: 1px solid #000;
 }
 
-.linkDash { 
-    text-decoration: none;
-}
 
-h5 {
+.links {
+    font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
     color: rgb(170, 32, 204);
     transition: ease-in-out 0.3s;
+    margin: 5px;
+    font-size: 13px;
 }
 
-h5:hover {
-    color: rgb(18, 15, 19);
+.links:hover {
+    color: #0f0c29;
+    ;
 }
