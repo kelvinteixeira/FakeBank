@@ -1,8 +1,20 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './style.css'
 
 export default function SingUp() {
+  
+  const history = useHistory()
+  const [cpf, setCpf] = useState('');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
+
+  function singup() {
+    history.push('/')
+  }
+
   return (
     <section className="container">
 
@@ -12,29 +24,29 @@ export default function SingUp() {
         </div>
 
         <label>CPF
-          <input type="text"></input>
+          <input value= {cpf} onChange={ (e) => setCpf(e.target.value)} type="text"></input>
         </label>
 
         <label>Nome Completo
-          <input type="text" ></input>
+          <input value={nome} onChange={ (e) => setNome(e.target.value)} type="text" ></input>
         </label>
 
         <label>Email
-          <input type="text" ></input>
+          <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" ></input>
         </label>
 
         <label>Senha
-          <input type="password" ></input>
+          <input value={senha} onChange={(e) => setSenha(e.target.value)} type="password" ></input>
         </label>
 
         <label>Confime a senha
-          <input type="password" ></input>
+          <input value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} type="password" ></input>
         </label>
 
-        <button >Cadastrar</button>
+        <button onClick={singup} >Cadastrar</button>
 
-       <Link className="links" to="/"> &lt; Voltar </Link>
-      
+        <Link className="links" to="/"> &lt; Voltar </Link>
+        
       </form>
   </section>
   )
