@@ -10,10 +10,21 @@ export default function SingUp() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [tipoSenha, setTipoSenha] = useState('password' || 'text')
 
   function singup() {
     history.push('/')
   }
+
+
+  function showHide(e) {
+    if (e.target.checked) {
+      setTipoSenha('text')
+    } else {
+      setTipoSenha('password')
+    }
+  }
+ 
 
   return (
     <section className="container">
@@ -28,7 +39,7 @@ export default function SingUp() {
         </label>
 
         <label>Nome Completo
-          <input value={nome} onChange={ (e) => setNome(e.target.value)} type="text" ></input>
+          <input value={nome} onChange={(e) => setNome(e.target.value)} type="text" ></input>
         </label>
 
         <label>Email
@@ -36,12 +47,21 @@ export default function SingUp() {
         </label>
 
         <label>Senha
-          <input value={senha} onChange={(e) => setSenha(e.target.value)} type="password" ></input>
+          <input name="inputSenha" value={senha} onChange={(e) => setSenha(e.target.value)} type={tipoSenha} ></input>
+          <input type="checkbox" onClick={showHide} ></input>
         </label>
 
         <label>Confime a senha
           <input value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} type="password" ></input>
         </label>
+
+        <div>
+          <label htmlFor="terms" className="check">
+          <input id="terms" type="checkbox"></input>
+          <span></span>
+          </label>
+        </div>
+        
 
         <button onClick={singup} >Cadastrar</button>
 
