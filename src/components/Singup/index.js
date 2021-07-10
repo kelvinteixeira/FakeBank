@@ -10,7 +10,8 @@ export default function SingUp() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
-  const [tipoSenha, setTipoSenha] = useState('password' || 'text')
+  const [tipoSenha, setTipoSenha] = useState('password')
+  const [tipoSenhaConfirmada, setTipoSenhaConfirmada] = useState('password')
 
   function singup() {
     history.push('/')
@@ -22,6 +23,14 @@ export default function SingUp() {
       setTipoSenha('text')
     } else {
       setTipoSenha('password')
+    }
+  }
+
+  function showHideConfirm(e) {
+    if (e.target.checked) {
+      setTipoSenhaConfirmada('text')
+    } else {
+      setTipoSenhaConfirmada('password')
     }
   }
  
@@ -52,7 +61,8 @@ export default function SingUp() {
         </label>
 
         <label>Confime a senha
-          <input value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} type="password" ></input>
+          <input value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} type={tipoSenhaConfirmada} ></input>
+          <input type="checkbox" onClick={showHideConfirm} ></input>
         </label>
 
         <div>
