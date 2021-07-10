@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import './style.css'
+import '../Login/style.css'
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 
   function logar(e) {
     e.preventDefault()
-    if (cpf === '01887316440' && senha === '123') {
+    if (cpf === '12345678900' && senha === '123') {
       history.push('/dashboard')
     } else {
       alert('USUARIO OU SENHA INVALIDOS')

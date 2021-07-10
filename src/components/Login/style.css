@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -21,6 +19,8 @@ form {
     border-radius: 10px;
     border: solid 1px #000;
     background: rgb(253, 253, 253);
+    box-shadow: 3px 4px 8px 0px #000;
+
 }
 
 .fazerLogin {

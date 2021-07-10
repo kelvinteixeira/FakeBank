@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import './style.css'
+import '../Singup/style.css'
 
 export default function SingUp() {
   
@@ -47,7 +47,7 @@ export default function SingUp() {
           <input value= {cpf} onChange={ (e) => setCpf(e.target.value)} type="text"></input>
         </label>
 
-        <label>Nome Completo
+        <label>Nome completo
           <input value={nome} onChange={(e) => setNome(e.target.value)} type="text" ></input>
         </label>
 
